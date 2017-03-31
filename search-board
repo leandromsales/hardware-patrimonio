@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]];
+then
+    echo ""
+    echo "   Usage $0 <network range>"
+    echo ""
+    echo "   where, network range example: 192.168.100.0/24"
+    echo ""
+    exit;
+fi
+
+sudo nmap -v -p 8888 $1 | grep "Discovered open port 8888"
